@@ -40,10 +40,12 @@ function displayData(data) {
   let sunset = document.createElement("p");
   sunset.textContent = "Sunset : " + data.sys.sunset;
 
-  
+  let weather = document.createElement("p");
+  weather.textContent = "Description: " + data.weather[0].description;
+
   
 
-  weatherCard.append(name, temp,pressure, humidity,  speed, sunrise, sunset);
+  weatherCard.append(name, temp,pressure, humidity,  speed, sunrise, sunset, weather);
 
   let iframe = document.createElement("iframe");
   iframe.src = `https://maps.google.com/maps?q=${data.name}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
